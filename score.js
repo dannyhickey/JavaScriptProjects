@@ -47,21 +47,23 @@ pTwo.addEventListener("click", function(){
 });
 
 //reset the p1Display and p2Display to zero
-reset.addEventListener("click", function(){
-	
+reset.addEventListener("click", function(){	
+	resetScore();
+});
+
+function resetScore(){
 	p1Score = 0;
 	p2Score = 0;
 	p1Display.textContent = p1Score;
 	p2Display.textContent = p2Score;
 	p1Display.classList.remove("theWinner");
 	p2Display.classList.remove("theWinner");
-	//p1Display.style.color = "black";
-	//p2Display.style.color = "black";
-
 	gameOver = false;
-});
+}
 
 inputNum.addEventListener("change", function(){
 	playingTo.textContent = inputNum.value; 
 	win = Number(inputNum.value);//Convert String to Number 
+	resetScore();
 });
+

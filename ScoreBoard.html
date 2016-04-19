@@ -3,16 +3,30 @@
 <head>
 	<title>Score</title>
 	<link rel="stylesheet" type="text/css" href="score.css">
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 </head>
 <body>
+<div class="container">
+<div class="row">
+	
 <h1><span id="p1Display">0</span> to <span id="p2Display">0</span></h1>
 
 <p>Playing to <span id="playingTo">5</span></p>
+
+<button id="p1" class="btn btn-primary btn-lg">Player One</button>
+<button id="p2" class="btn btn-primary btn-lg">Player Two</button>
+<button id="reset" class="btn btn-danger btn-lg">Reset</button>
+<br>
+<br>
 <input type="number">
-<button id="p1">Player One</button>
-<button id="p2">Player Two</button>
-<button id="reset">Reset</button>
+
+</div>
 
 <script type="text/javascript" src="score.js"></script>
+
+
+</div>
 </body>
 </html>
