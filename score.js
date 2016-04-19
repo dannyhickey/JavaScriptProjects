@@ -7,17 +7,19 @@
 
 /***************Buttons************************/
 var pOne = document.querySelector("#p1");
-var pTwo = document.getElementById('p2');
-var reset = document.querySelector('#reset');
+var pTwo = document.querySelector("#p2");
+var reset = document.querySelector("#reset");
 /**********************************************/
-
-var p1Display = document.querySelector("#p1Display");//span tags with number display
-var p2Display = document.querySelector("#p2Display");//span tags with number display
+var inputNum = document.querySelector("input");//input tag of type="number"
+var playingTo = document.querySelector("#playingTo");//span tags with display of maximum points needed
+var p1Display = document.querySelector("#p1Display");//span tags with score display for player 1
+var p2Display = document.querySelector("#p2Display");//span tags with score display for player 2
 var p1Score = 0;
 var p2Score = 0;
 
 var gameOver = false;
 var win = 5;
+
 
 //Increment player one score
 pOne.addEventListener("click", function(){
@@ -57,6 +59,9 @@ reset.addEventListener("click", function(){
 	//p2Display.style.color = "black";
 
 	gameOver = false;
+});
 
-
+inputNum.addEventListener("change", function(){
+	playingTo.textContent = inputNum.value; 
+	win = Number(inputNum.value);//Convert String to Number 
 });
