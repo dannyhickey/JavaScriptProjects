@@ -25,7 +25,7 @@ pOne.addEventListener("click", function(){
 		p1Score++;
 		if (p1Score === win) {
 			gameOver = true;
-			p1Display.style.color = "red";
+			p1Display.classList.add("theWinner");
 		}
 		p1Display.textContent = p1Score;		
 	}
@@ -38,7 +38,7 @@ pTwo.addEventListener("click", function(){
 		p2Score++;
 		if (p2Score === win) {
 			gameOver = true;
-			p2Display.style.color = "red";
+			p2Display.classList.add("theWinner");
 		}
 		p2Display.textContent = p2Score;		
 	}	
@@ -51,8 +51,10 @@ reset.addEventListener("click", function(){
 	p2Score = 0;
 	p1Display.textContent = p1Score;
 	p2Display.textContent = p2Score;
-	p1Display.style.color = "black";
-	p2Display.style.color = "black";
+	p1Display.classList.remove("theWinner");
+	p2Display.classList.remove("theWinner");
+	//p1Display.style.color = "black";
+	//p2Display.style.color = "black";
 
 	gameOver = false;
 
