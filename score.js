@@ -62,8 +62,8 @@ function resetScore(){
 }
 
 inputNum.addEventListener("change", function(){
-	playingTo.textContent = inputNum.value; 
-	win = Number(inputNum.value);//Convert String to Number 
+	playingTo.textContent = this.value; 
+	win = Number(this.value);//Convert String to Number 
 	resetScore();
 });
 

@@ -8,10 +8,28 @@
     text-align: center;
 }
 
-#p2{
+/*#p2{
 	float: right;
 }
 
 #p1{
 	float: left;
+}*/
+
+body
+{
+	background-color: #d5912b;
 }
+// Classes
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
+.reset
+{
+	float: bottom;
+}
+
