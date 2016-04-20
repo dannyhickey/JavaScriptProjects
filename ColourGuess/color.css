@@ -19,3 +19,8 @@ body
 	margin: 1.5%;
 }
 
+#msgDisplay
+{
+	color: white;
+}
+

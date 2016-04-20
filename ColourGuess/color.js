@@ -7,6 +7,8 @@ var colours = [
 		"rgb(255 ,0 ,255)"
 	];
 
+var msgDisplay = document.querySelector("#msgDisplay");
+
 var chosenColour = colours[3];
 
 var colourChoice = document.querySelector("#colourChoice");//Selecting the colourChoice id in the span tag of h1 element.
@@ -22,13 +24,13 @@ for (var i = 0; i < box.length; i++) {
 	{
 		//get the colour of selected square
 		var colourClicked = this.style.background;
-		alert(colourClicked);
 		//compare the colour to the picked colour
 		if(colourClicked === chosenColour)
 			{	
-				alert("Correct!");
+				msgDisplay.textContent = "Correct!";
 			}else{
-				alert("Wrong!");
+				this.style.background = "#487A21"; // changes selected box colour to match the background colour of the body
+				msgDisplay.textContent = "Try Again!";
 			}
 	});
 }
