@@ -4,32 +4,42 @@
 }
 
 .container{
-  	width: 50%;
-    text-align: center;
+  	max-width: 300px;
+    margin: 0 auto;
 }
-
-/*#p2{
-	float: right;
-}
-
-#p1{
-	float: left;
-}*/
 
 body
 {
 	background-color: #d5912b;
 }
+
 // Classes
 .pull-left {
   float: left !important;
 }
-.pull-right {
-  float: right !important;
+
+.btn
+{
+	margin: 5px;
+	width: 300px;
 }
 
-.reset
+
+label
 {
-	float: bottom;
+	padding: 10px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+h1, p{
+	text-align: center;
+	font-size: 40px;
+}
+
+input
+{
+	height: 50px;
+	font-size: 20px;
 }
 
