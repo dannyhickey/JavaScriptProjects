@@ -1,0 +1,13 @@
+body 
+{
+	background-color: #487A21;
+}
+
+.box
+{
+	width: 30%;
+	background-color: white;
+	padding-bottom: 30%;
+	border: 1px solid black;
+	float: left;
+}
