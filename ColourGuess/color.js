@@ -27,10 +27,19 @@ for (var i = 0; i < box.length; i++) {
 		//compare the colour to the picked colour
 		if(colourClicked === chosenColour)
 			{	
-				msgDisplay.textContent = "Correct!";
-			}else{
+				msgDisplay.textContent = "Correct!";// if correct change the message display to "Correct".
+							}else{
 				this.style.background = "#487A21"; // changes selected box colour to match the background colour of the body
-				msgDisplay.textContent = "Try Again!";
+				msgDisplay.textContent = "Try Again!";// if incorrect change the message display to "Try Again".
 			}
 	});
+}
+
+function changeColours(colour){
+	//for loop to cycle through squares
+	for (var i = 0; i < box.length; i++) {
+		box[i].style.background
+	}
+	//change colour to match selected colour
+
 }
