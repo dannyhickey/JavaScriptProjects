@@ -1,11 +1,12 @@
-var colours = [
+var colours = generateRandomColours(6);
+/* [
 		"rgb(255, 0, 0)",
 		"rgb(255, 255, 0)",
 		"rgb(0, 255, 0)",
 		"rgb(0, 255, 255)",
 		"rgb(0, 0, 255)",
 		"rgb(255 ,0 ,255)"
-	];
+	];*/
 
 var resetColours = document.querySelector("#resetColours");
 var msgDisplay = document.querySelector("#msgDisplay");
@@ -74,4 +75,13 @@ function colourGenerate(){
 function randomColour(){
 	var rand = Math.floor(Math.random() * colours.length);
 	return colours[rand];
+}
+
+function generateRandomColours(num)
+{
+	//make array
+
+	//add "num" random colours to the array
+
+	//return
 }
