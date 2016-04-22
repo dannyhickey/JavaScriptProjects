@@ -7,6 +7,7 @@ var colours = [
 		"rgb(255 ,0 ,255)"
 	];
 
+var resetColours = document.querySelector("#resetColours");
 var msgDisplay = document.querySelector("#msgDisplay");
 
 var chosenColour = colours[3];
@@ -28,7 +29,7 @@ for (var i = 0; i < box.length; i++) {
 		if(colourClicked === chosenColour)
 			{	
 				msgDisplay.textContent = "Correct!";// if correct change the message display to "Correct".
-				changeColours();
+				changeAllColours();
 							}else{
 				this.style.background = "#487A21"; // changes selected box colour to match the background colour of the body
 				msgDisplay.textContent = "Try Again!";// if incorrect change the message display to "Try Again".
@@ -36,7 +37,7 @@ for (var i = 0; i < box.length; i++) {
 	});
 }
 
-function changeColours(colour){
+function changeAllColours(colour){
 	//for loop to cycle through squares
 	for (var i = 0; i < box.length; i++) {
 		box[i].style.background = chosenColour;
@@ -47,3 +48,12 @@ function changeColours(colour){
 	//box[i].style.background = chosenColour;
 
 }
+
+
+
+resetColours.addEventListener("click", function(){
+
+			for (var i = 0; i < box.length; i++) {
+			box[i].style.background = colours[i];
+		}
+	});
