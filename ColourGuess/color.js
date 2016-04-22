@@ -10,7 +10,7 @@ var colours = [
 var resetColours = document.querySelector("#resetColours");
 var msgDisplay = document.querySelector("#msgDisplay");
 var	h1 = document.querySelector("h1");
-var chosenColour = colours[3];
+var chosenColour = randomColour();
 
 var colourChoice = document.querySelector("#colourChoice");//Selecting the colourChoice id in the span tag of h1 element.
 colourChoice.textContent = chosenColour;
@@ -37,13 +37,13 @@ for (var i = 0; i < box.length; i++) {
 }
 
 //Changes all colours  to the correct colour when the correct is selected.
-function changeAllColours(colour){
-	//for loop to cycle through squares
+function changeAllColours(){
+	//for loop to cycle through box classes
 	for (var i = 0; i < box.length; i++) {
 		box[i].style.background = chosenColour;
 		h1.style.background = chosenColour;
 	}
-	return;
+
 
 	//change colour of all box classes and h1 element to match selected colour
 	//box[i].style.background = chosenColour;
@@ -53,15 +53,25 @@ function changeAllColours(colour){
 
 
 resetColours.addEventListener("click", function(){
+		
 		colourGenerate();
+		
 	});
 
 //This function generates the colours for the beginning of the game.
 function colourGenerate(){
+
+
+			msgDisplay.textContent = "";
 			/*loops through the "box" class elements and also loops through colours array
   			assigning corresponding values in array to each element cycled through*/
 			for (var i = 0; i < box.length; i++) {
 			box[i].style.background = colours[i];
 			h1.style.background = "none";// Removes the background style of the h1
 		}
+}
+
+function randomColour(){
+	var rand = Math.floor(Math.random() * colours.length);
+	return colours[rand];
 }
