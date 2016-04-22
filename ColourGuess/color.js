@@ -28,6 +28,7 @@ for (var i = 0; i < box.length; i++) {
 		if(colourClicked === chosenColour)
 			{	
 				msgDisplay.textContent = "Correct!";// if correct change the message display to "Correct".
+				changeColours();
 							}else{
 				this.style.background = "#487A21"; // changes selected box colour to match the background colour of the body
 				msgDisplay.textContent = "Try Again!";// if incorrect change the message display to "Try Again".
@@ -38,8 +39,11 @@ for (var i = 0; i < box.length; i++) {
 function changeColours(colour){
 	//for loop to cycle through squares
 	for (var i = 0; i < box.length; i++) {
-		box[i].style.background
+		box[i].style.background = chosenColour;
 	}
-	//change colour to match selected colour
+	return;
+
+	//change colour of all box classes and h1 element to match selected colour
+	//box[i].style.background = chosenColour;
 
 }
