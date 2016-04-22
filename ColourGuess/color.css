@@ -21,6 +21,14 @@ body
 
 #msgDisplay
 {
-	color: white;
+	color: black;
+}
+
+#line
+{
+	background-color: white;
+	text-align: center;
+	height: 20px;
+	color: black;
 }
 

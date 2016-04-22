@@ -1,14 +1,6 @@
 var colours = generateRandomColours(6);
-/* [
-		"rgb(255, 0, 0)",
-		"rgb(255, 255, 0)",
-		"rgb(0, 255, 0)",
-		"rgb(0, 255, 255)",
-		"rgb(0, 0, 255)",
-		"rgb(255 ,0 ,255)"
-	];*/
 
-var resetColours = document.querySelector("#resetColours");
+var resetGame = document.querySelector("#resetGame");
 var msgDisplay = document.querySelector("#msgDisplay");
 var	h1 = document.querySelector("h1");
 var chosenColour = pickRandomColour();
@@ -48,25 +40,24 @@ function changeAllColours(colour){
 
 
 
-/*resetColours.addEventListener("click", function(){
-		
-		colourGenerate();
-		
-	});
-*/
-/*//This function generates the colours for the beginning of the game.
-function colourGenerate(){
+resetGame.addEventListener("click", function(){
+		//generate all new colours
+		colours = generateRandomColours(6);
+
+		//choose a new random colour from array
+		chosenColour = pickRandomColour();
 
 
-			msgDisplay.textContent = "";
-			loops through the "box" class elements and also loops through colours array
-  			assigning corresponding values in array to each element cycled through
-			for (var i = 0; i < box.length; i++) {
-			box[i].style.background = colours[i];
-			h1.style.background = "none";// Removes the background style of the h1
+		colourChoice.textContent = chosenColour;
+
+		for (var i = 0; i < box.length; i++) {
+		box[i].style.background = colours[i];	
 		}
-}
-*/
+		h1.style.background = "none";// Removes the background style of the h1
+	
+	});
+
+
 function pickRandomColour(){
 	var rand = Math.floor(Math.random() * colours.length);
 	return colours[rand];
@@ -95,5 +86,5 @@ function randomColour(){
 	var b = Math.floor(Math.random() * 256);
 
 	//"rgb(r, g, b)"
-	return "rgb(" + r + "," + g + "," + b + ")";
+	return "rgb(" + r + ", " + g + ", " + b + ")";
 }
