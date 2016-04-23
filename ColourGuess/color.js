@@ -5,8 +5,8 @@ var msgDisplay = document.querySelector("#msgDisplay");
 var	h1 = document.querySelector("h1");
 var chosenColour = pickRandomColour();
 
-var colourChoice = document.querySelector("#colourChoice");//Selecting the colourChoice id in the span tag of h1 element.
-colourChoice.textContent = chosenColour;
+var displayedColours = document.querySelector("#displayedColours");//Selecting the displayedColours id in the span tag of h1 element.
+displayedColours.textContent = chosenColour;
 var	box = document.querySelectorAll(".box");
 
 
@@ -22,6 +22,7 @@ for (var i = 0; i < box.length; i++) {
 			{	
 				msgDisplay.textContent = "Correct!";// if correct change the message display to "Correct".
 				changeAllColours(colourClicked);
+				resetGame.textContent = "Play Again";
 							}else{
 				this.style.background = "#487A21"; // changes selected box colour to match the background colour of the body
 				msgDisplay.textContent = "Try Again!";// if incorrect change the message display to "Try Again".
@@ -37,6 +38,7 @@ function changeAllColours(colour){
 		h1.style.background = colour;
 	}
 }
+//resetGame.textContent = "Play Again";
 
 
 
@@ -48,7 +50,7 @@ resetGame.addEventListener("click", function(){
 		chosenColour = pickRandomColour();
 
 
-		colourChoice.textContent = chosenColour;
+		displayedColours.textContent = chosenColour;
 
 		for (var i = 0; i < box.length; i++) {
 		box[i].style.background = colours[i];	
