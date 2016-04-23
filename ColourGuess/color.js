@@ -1,6 +1,9 @@
 var colours = generateRandomColours(6);
 
 var resetGame = document.querySelector("#resetGame");
+var easy = document.querySelector("#easy");
+var difficult = document.querySelector("#difficult");
+
 var msgDisplay = document.querySelector("#msgDisplay");
 var	h1 = document.querySelector("h1");
 var chosenColour = pickRandomColour();
@@ -29,6 +32,20 @@ for (var i = 0; i < box.length; i++) {
 			}
 	});
 }
+
+easy.addEventListener("click", function(){
+	
+		this.classList.add("selected");
+		difficult.classList.remove("selected");
+
+});
+
+difficult.addEventListener("click", function(){
+	
+		this.classList.add("selected");
+		easy.classList.remove("selected");
+
+});
 
 //Changes all colours  to the correct colour when the correct is selected.
 function changeAllColours(colour){
