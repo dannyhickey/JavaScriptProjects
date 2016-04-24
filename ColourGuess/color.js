@@ -37,6 +37,22 @@ easy.addEventListener("click", function(){
 	
 		this.classList.add("selected");
 		difficult.classList.remove("selected");
+		colours = generateRandomColours(3);
+		//choose a new random colour from array
+		chosenColour = pickRandomColour();
+
+		displayedColours.textContent = chosenColour;
+		for (var i = 0; i < box.length; i++) {
+			if(colours[i])
+			{
+				box[i].style.background = colours[i];
+			}else{
+				
+				box[i].style.background = "none";
+				box[i].style.border = "none";
+
+			}
+		}
 
 });
 
@@ -55,7 +71,7 @@ function changeAllColours(colour){
 		h1.style.background = colour;
 	}
 }
-//resetGame.textContent = "Play Again";
+
 
 
 
