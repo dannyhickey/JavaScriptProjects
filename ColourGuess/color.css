@@ -18,11 +18,16 @@ body
 	border: 1px solid black;
 	float: left;
 	margin: 1.5%;
+	border-radius: 10%;
+	transition: background 0.5s;
 }
 
 #msgDisplay
 {
 	color: black;
+	display: inline-block;
+	width: 10%;
+
 }
 
 #line
@@ -36,7 +41,8 @@ body
 
 .selected
 {
-	background: blue;
+	color: white;
+	background-color: #722626;
 }
 
 
@@ -60,6 +66,15 @@ button
 	background: none;
 	text-transform: uppercase;
 	height: 100%;
-	color: lightblue;
-	font-size: inherit;
+	color: darkblue;
+	font-family: inherit;
+	font-size: 16px;
+	letter-spacing: 1px;
+	transition: all 1.0s;
+}
+
+button:hover
+{
+	color: white;
+	background-color: #722626;
 }
