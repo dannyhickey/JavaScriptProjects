@@ -18,7 +18,7 @@ for (var i = 0; i < box.length; i++) {
 	//adding click event listener to each box.
 	box[i].addEventListener("click", function()
 	{
-		//get the colour of selected square
+		//get the colour of selected box
 		var colourClicked = this.style.background;
 		//compare the colour to the picked colour
 		if(colourClicked === chosenColour)
@@ -34,21 +34,22 @@ for (var i = 0; i < box.length; i++) {
 }
 
 easy.addEventListener("click", function(){
-		this.classList.add("selected");//highlight the easy button button when selected
+		this.classList.add("selected");//highlight the easy button button when selected		
 		difficult.classList.remove("selected");//unhighlight the difficult button button when selected
-		colours = generateRandomColours(3);
-		//choose a new random colour from array
-		chosenColour = pickRandomColour();
+
+		colours = generateRandomColours(3); // set the colours array to display 3 boxes instead of the default 6
+
+		chosenColour = pickRandomColour();//choose a new random colour from array
 
 		displayedColours.textContent = chosenColour;
 		for (var i = 0; i < box.length; i++) {
 			if(colours[i])
 			{
-				box[i].style.background = colours[i];
+				box[i].style.background = colours[i];// generate random colour for the 3 boxes on top
 			}else{
 				
-				box[i].style.background = "none";
-				box[i].style.border = "none";
+				box[i].style.background = "none";//hide the bottom 3 boxes 
+				box[i].style.border = "none";//hide the bottom 3 boxes border
 
 			}
 		}
@@ -59,6 +60,20 @@ difficult.addEventListener("click", function(){
 	
 		this.classList.add("selected");
 		easy.classList.remove("selected");
+
+		colours = generateRandomColours(6); // set the colours array to display 3 boxes
+
+		chosenColour = pickRandomColour();//choose a new random colour from array
+
+		displayedColours.textContent = chosenColour;
+		for (var i = 0; i < box.length; i++) {
+			
+				box[i].style.background = colours[i];// generate random colour for the 3 boxes on top
+							
+				box[i].style.background = "block";//hide the bottom 3 boxes 
+				box[i].style.border = "1px solid black";//sets border back to black
+
+			}
 
 });
 
