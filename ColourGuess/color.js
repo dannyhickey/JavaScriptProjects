@@ -29,7 +29,7 @@ for (var i = 0; i < box.length; i++) {
 				changeAllColours(colourClicked);
 				resetGame.textContent = "Play Again";
 							}else{
-				this.style.background = "#487A21"; // changes selected box colour to match the background colour of the body
+				this.style.background = "#6666AC"; // changes selected box colour to match the background colour of the body
 				msgDisplay.textContent = "Try Again!";// if incorrect change the message display to "Try Again".
 			}
 	});
@@ -53,7 +53,7 @@ easy.addEventListener("click", function(){
 			}else{
 				
 				box[i].style.background = "none";//hide the bottom 3 boxes 
-				box[i].style.border = "none";//hide the bottom 3 boxes border
+				//box[i].style.border = "none";//hide the bottom 3 boxes border
 
 			}
 		}
@@ -77,7 +77,7 @@ difficult.addEventListener("click", function(){
 				box[i].style.background = colours[i];// generate random colour for the 3 boxes on top
 							
 				box[i].style.background = "block";//hide the bottom 3 boxes 
-				box[i].style.border = "1px solid black";//sets border back to black
+				//box[i].style.border = "1px solid black";//sets border back to black
 
 			}
 

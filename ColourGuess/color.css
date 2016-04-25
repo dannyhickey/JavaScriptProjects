@@ -1,6 +1,6 @@
 body 
 {
-	background-color: #487A21;
+	background-color: #6666AC;
 	margin: 0;
 }
 
@@ -15,11 +15,11 @@ body
 	width: 30%;
 	background-color: green;
 	padding-bottom: 30%;
-	border: 1px solid black;
 	float: left;
 	margin: 1.5%;
 	border-radius: 10%;
 	transition: background 0.5s;
+	cursor: pointer;
 }
 
 #msgDisplay
@@ -27,6 +27,8 @@ body
 	color: black;
 	display: inline-block;
 	width: 10%;
+	letter-spacing: 1px;
+	font-family: inherit;
 
 }
 
@@ -77,4 +79,5 @@ button:hover
 {
 	color: white;
 	background-color: #722626;
+	cursor: pointer;
 }
