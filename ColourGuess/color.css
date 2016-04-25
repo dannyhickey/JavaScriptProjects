@@ -31,6 +31,7 @@ body
 	text-align: center;
 	height: 20px;
 	color: black;
+	margin 0;
 }
 
 .selected
@@ -47,4 +48,18 @@ h1
 	background-color: #722626;
 	margin: 0;
 	font-weight: normal;
+	line-height: 1.2;
+	padding: 20px 0;
+	font-family: 'Bangers', cursive;
+	letter-spacing: 5px;
+}
+
+button
+{
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	color: lightblue;
+	font-size: inherit;
 }
