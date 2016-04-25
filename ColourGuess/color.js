@@ -1,4 +1,5 @@
-var colours = generateRandomColours(6);
+var numOfBoxes = 6;//variable to store the number of boxes to be displayed
+var colours = generateRandomColours(numOfBoxes);
 
 var resetGame = document.querySelector("#resetGame");
 var easy = document.querySelector("#easy");
@@ -11,6 +12,7 @@ var chosenColour = pickRandomColour();
 var displayedColours = document.querySelector("#displayedColours");//Selecting the displayedColours id in the span tag of h1 element.
 displayedColours.textContent = chosenColour;
 var	box = document.querySelectorAll(".box");
+
 
 
 for (var i = 0; i < box.length; i++) {
@@ -37,6 +39,7 @@ easy.addEventListener("click", function(){
 		this.classList.add("selected");//highlight the easy button button when selected		
 		difficult.classList.remove("selected");//unhighlight the difficult button button when selected
 
+		numOfBoxes = 3;
 		colours = generateRandomColours(3); // set the colours array to display 3 boxes instead of the default 6
 
 		chosenColour = pickRandomColour();//choose a new random colour from array
@@ -61,7 +64,8 @@ difficult.addEventListener("click", function(){
 		this.classList.add("selected");
 		easy.classList.remove("selected");
 
-		colours = generateRandomColours(6); // set the colours array to display 3 boxes
+		numOfBoxes = 6;
+		colours = generateRandomColours(numOfBoxes); // set the colours array to display 3 boxes
 
 		chosenColour = pickRandomColour();//choose a new random colour from array
 
@@ -91,7 +95,7 @@ function changeAllColours(colour){
 
 resetGame.addEventListener("click", function(){
 		//generate all new colours
-		colours = generateRandomColours(6);
+		colours = generateRandomColours(numOfBoxes);
 
 		//choose a new random colour from array
 		chosenColour = pickRandomColour();
