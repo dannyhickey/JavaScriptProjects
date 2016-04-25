@@ -38,6 +38,7 @@ for (var i = 0; i < box.length; i++) {
 easy.addEventListener("click", function(){
 		this.classList.add("selected");//highlight the easy button button when selected		
 		difficult.classList.remove("selected");//unhighlight the difficult button button when selected
+		msgDisplay.textContent = "";
 
 		numOfBoxes = 3;
 		colours = generateRandomColours(3); // set the colours array to display 3 boxes instead of the default 6
@@ -63,6 +64,7 @@ difficult.addEventListener("click", function(){
 	
 		this.classList.add("selected");
 		easy.classList.remove("selected");
+		msgDisplay.textContent = "";
 
 		numOfBoxes = 6;
 		colours = generateRandomColours(numOfBoxes); // set the colours array to display 3 boxes
@@ -94,6 +96,9 @@ function changeAllColours(colour){
 
 
 resetGame.addEventListener("click", function(){
+
+		msgDisplay.textContent = "";
+
 		//generate all new colours
 		colours = generateRandomColours(numOfBoxes);
 
@@ -106,7 +111,7 @@ resetGame.addEventListener("click", function(){
 		for (var i = 0; i < box.length; i++) {
 		box[i].style.background = colours[i];	
 		}
-		h1.style.background = "none";// Removes the background style of the h1
+		h1.style.background = "#722626";// Sets the background of the h1 back to its original colour
 	
 	});
 
