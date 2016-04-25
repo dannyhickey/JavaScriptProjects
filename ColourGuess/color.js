@@ -34,9 +34,8 @@ for (var i = 0; i < box.length; i++) {
 }
 
 easy.addEventListener("click", function(){
-	
-		this.classList.add("selected");
-		difficult.classList.remove("selected");
+		this.classList.add("selected");//highlight the easy button button when selected
+		difficult.classList.remove("selected");//unhighlight the difficult button button when selected
 		colours = generateRandomColours(3);
 		//choose a new random colour from array
 		chosenColour = pickRandomColour();
