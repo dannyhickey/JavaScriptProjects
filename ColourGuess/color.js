@@ -1,26 +1,66 @@
 var numOfBoxes = 6;//variable to store the number of boxes to be displayed
-var colours = generateRandomColours(numOfBoxes);
+var colours = [];
+var chosenColour;
 
 var resetGame = document.querySelector("#resetGame");
 var difficulty = document.querySelectorAll(".difficulty");
 
 var msgDisplay = document.querySelector("#msgDisplay");
 var	h1 = document.querySelector("h1");
-var chosenColour = pickRandomColour();
 
 var displayedColours = document.querySelector("#displayedColours");//Selecting the displayedColours id in the span tag of h1 element.
 displayedColours.textContent = chosenColour;
 var	box = document.querySelectorAll(".box");
 
-for (var i = 0; i < difficulty.length; i++) {
-	difficulty[i].addEventListener("click", function(){
-		difficulty[0].classList.remove("selected");
-		difficulty[1].classList.remove("selected");
-		this.classList.add("selected");
-		this.textContent === "Easy" ? numOfBoxes = 3: numOfBoxes = 6;
-		reset();
-	});
+init();
+
+function init(){
+	difficultyButtons();
+
+	displayBoxes();
+
+	reset();
+
 }
+
+function displayBoxes()
+{
+	for (var i = 0; i < box.length; i++) {
+		
+		//adding click event listener to each box.
+		box[i].addEventListener("click", function()
+		{
+			//get the colour of selected box
+			var colourClicked = this.style.background;
+			//compare the colour to the picked colour
+			if(colourClicked === chosenColour)
+				{	
+					msgDisplay.textContent = "Correct!";// if correct change the message display to "Correct".
+					changeAllColours(colourClicked);
+					resetGame.textContent = "Play Again";
+								}else{
+					this.style.background = "#6666AC"; // changes selected box colour to match the background colour of the body
+					msgDisplay.textContent = "Try Again!";// if incorrect change the message display to "Try Again".
+				}
+		});
+	}
+}
+
+function difficultyButtons()
+{
+	//difficulty buttons event listeners
+	for (var i = 0; i < difficulty.length; i++) {
+		difficulty[i].addEventListener("click", function(){
+			difficulty[0].classList.remove("selected");
+			difficulty[1].classList.remove("selected");
+			this.classList.add("selected");
+			this.textContent === "Easy" ? numOfBoxes = 3: numOfBoxes = 6;
+			reset();
+		});
+	}	
+
+}
+
 
 function reset(){
 		msgDisplay.textContent = "";
@@ -47,74 +87,6 @@ function reset(){
 		h1.style.background = "#722626";// Sets the background of the h1 back to its original colour
 }
 
-
-for (var i = 0; i < box.length; i++) {
-	box[i].style.background = colours[i];
-	//adding click event listener to each box.
-	box[i].addEventListener("click", function()
-	{
-		//get the colour of selected box
-		var colourClicked = this.style.background;
-		//compare the colour to the picked colour
-		if(colourClicked === chosenColour)
-			{	
-				msgDisplay.textContent = "Correct!";// if correct change the message display to "Correct".
-				changeAllColours(colourClicked);
-				resetGame.textContent = "Play Again";
-							}else{
-				this.style.background = "#6666AC"; // changes selected box colour to match the background colour of the body
-				msgDisplay.textContent = "Try Again!";// if incorrect change the message display to "Try Again".
-			}
-	});
-}
-
-/*easy.addEventListener("click", function(){
-		this.classList.add("selected");//highlight the easy button button when selected		
-		difficult.classList.remove("selected");//unhighlight the difficult button button when selected
-		msgDisplay.textContent = "";
-
-		numOfBoxes = 3;
-		colours = generateRandomColours(3); // set the colours array to display 3 boxes instead of the default 6
-
-		chosenColour = pickRandomColour();//choose a new random colour from array
-
-		displayedColours.textContent = chosenColour;
-		for (var i = 0; i < box.length; i++) {
-			if(colours[i])
-			{
-				box[i].style.background = colours[i];// generate random colour for the 3 boxes on top
-			}else{
-				
-				box[i].style.background = "none";//hide the bottom 3 boxes 
-				//box[i].style.border = "none";//hide the bottom 3 boxes border
-
-			}
-		}
-
-});
-
-difficult.addEventListener("click", function(){
-	
-		this.classList.add("selected");
-		easy.classList.remove("selected");
-		msgDisplay.textContent = "";
-
-		numOfBoxes = 6;
-		colours = generateRandomColours(numOfBoxes); // set the colours array to display 3 boxes
-
-		chosenColour = pickRandomColour();//choose a new random colour from array
-
-		displayedColours.textContent = chosenColour;
-		for (var i = 0; i < box.length; i++) {
-			
-				box[i].style.background = colours[i];// generate random colour for the 3 boxes on top
-							
-				box[i].style.background = "block";//hide the bottom 3 boxes 
-				//box[i].style.border = "1px solid black";//sets border back to black
-
-			}
-
-});*/
 
 //Changes all colours  to the correct colour when the correct is selected.
 function changeAllColours(colour){
