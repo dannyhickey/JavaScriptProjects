@@ -10,6 +10,7 @@ body
 	
 }
 
+
 .box
 {
 	width: 30%;
@@ -39,6 +40,7 @@ body
 	height: 20px;
 	color: black;
 	margin 0;
+	padding: 20px 0;
 }
 
 .selected

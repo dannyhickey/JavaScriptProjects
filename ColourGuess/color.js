@@ -53,8 +53,28 @@ function difficultyButtons()
 		difficulty[i].addEventListener("click", function(){
 			difficulty[0].classList.remove("selected");
 			difficulty[1].classList.remove("selected");
+			difficulty[2].classList.remove("selected");
+			difficulty[3].classList.remove("selected");
 			this.classList.add("selected");
-			this.textContent === "Easy" ? numOfBoxes = 3: numOfBoxes = 6;
+			//this.textContent === "Easy" ? numOfBoxes = 3: numOfBoxes = 6;
+
+			if(this.textContent === "Easy")
+			{
+				numOfBoxes = 3;
+			}
+			else if(this.textContent === "Difficult")
+			{
+				numOfBoxes = 6;
+			}
+			else if(this.textContent === "Extreme")
+			{
+				numOfBoxes = 9;
+				
+			}else if(this.textContent === "Super-Extreme")
+			{
+				numOfBoxes = 15;
+
+			}
 			reset();
 		});
 	}	
@@ -74,7 +94,7 @@ function reset(){
 		resetGame.textContent = "Reset";
 
 
-		displayedColours.textContent = chosenColour;
+		displayedColours.textContent = chosenColour;//displays the colour in the span with id displayedColours
 
 		for (var i = 0; i < box.length; i++) {
 			if (colours[i]) {
