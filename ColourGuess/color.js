@@ -2,8 +2,7 @@ var numOfBoxes = 6;//variable to store the number of boxes to be displayed
 var colours = generateRandomColours(numOfBoxes);
 
 var resetGame = document.querySelector("#resetGame");
-var easy = document.querySelector("#easy");
-var difficult = document.querySelector("#difficult");
+var difficulty = document.querySelectorAll(".difficulty");
 
 var msgDisplay = document.querySelector("#msgDisplay");
 var	h1 = document.querySelector("h1");
@@ -13,6 +12,40 @@ var displayedColours = document.querySelector("#displayedColours");//Selecting t
 displayedColours.textContent = chosenColour;
 var	box = document.querySelectorAll(".box");
 
+for (var i = 0; i < difficulty.length; i++) {
+	difficulty[i].addEventListener("click", function(){
+		difficulty[0].classList.remove("selected");
+		difficulty[1].classList.remove("selected");
+		this.classList.add("selected");
+		this.textContent === "Easy" ? numOfBoxes = 3: numOfBoxes = 6;
+		reset();
+	});
+}
+
+function reset(){
+		msgDisplay.textContent = "";
+
+		//generate all new colours
+		colours = generateRandomColours(numOfBoxes);
+
+		//choose a new random colour from array
+		chosenColour = pickRandomColour();
+
+		resetGame.textContent = "Reset";
+
+
+		displayedColours.textContent = chosenColour;
+
+		for (var i = 0; i < box.length; i++) {
+			if (colours[i]) {
+			box[i].style.display = "block";	
+			box[i].style.background = colours[i];
+			}else{
+			box[i].style.display = "none";				
+			}
+		}
+		h1.style.background = "#722626";// Sets the background of the h1 back to its original colour
+}
 
 
 for (var i = 0; i < box.length; i++) {
@@ -35,7 +68,7 @@ for (var i = 0; i < box.length; i++) {
 	});
 }
 
-easy.addEventListener("click", function(){
+/*easy.addEventListener("click", function(){
 		this.classList.add("selected");//highlight the easy button button when selected		
 		difficult.classList.remove("selected");//unhighlight the difficult button button when selected
 		msgDisplay.textContent = "";
@@ -81,7 +114,7 @@ difficult.addEventListener("click", function(){
 
 			}
 
-});
+});*/
 
 //Changes all colours  to the correct colour when the correct is selected.
 function changeAllColours(colour){
@@ -96,23 +129,7 @@ function changeAllColours(colour){
 
 
 resetGame.addEventListener("click", function(){
-
-		msgDisplay.textContent = "";
-
-		//generate all new colours
-		colours = generateRandomColours(numOfBoxes);
-
-		//choose a new random colour from array
-		chosenColour = pickRandomColour();
-
-
-		displayedColours.textContent = chosenColour;
-
-		for (var i = 0; i < box.length; i++) {
-		box[i].style.background = colours[i];	
-		}
-		h1.style.background = "#722626";// Sets the background of the h1 back to its original colour
-	
+		reset();	
 	});
 
 
