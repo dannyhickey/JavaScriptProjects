@@ -84,3 +84,7 @@ button:hover
 	background-color: #722626;
 	cursor: pointer;
 }
+#shape
+{
+	float: left;
+}
