@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Front End JS App</title>
+  <meta charset="UTF-8" />
+  <title>Front End App</title>
+  <script src="src/model/Book.js"></script>
 </head>
 <body>
-<h1>This will be a Front end app with no libraries or frameworks used</h1>
-
+  <h1>Team Goals Record</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <menu>
+    <li><a href="#"><button type="button">
+      List all books
+    </button></a></li>
+    <li><a href="#"><button type="button">
+      Add a new book
+    </button></a></li>
+    <li><a href="#"><button type="button">
+      Update a book
+    </button></a></li>
+    <li><a href="#"><button type="button">
+      Delete a book
+    </button></a></li>
+    <li><button type="button" onclick="Book.clearData()">
+      Clear database
+    </button></li>
+    <li><button type="button" onclick="Book.createTestData()">
+      Create test data
+    </button></li>
+  </menu>
 </body>
 </html>
