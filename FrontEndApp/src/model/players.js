@@ -5,4 +5,4 @@ function Player( slots) {
   this.dob = slots.dob;
 };
 
-Player.instances = {};//initialize book instances
+Player.instances = {};//initialize player instances
