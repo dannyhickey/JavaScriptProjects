@@ -1,5 +1,5 @@
 function Player( slots) {
-  this.idNo = slots.idNo;
+  this.idNum = slots.idNum;
   this.name = slots.name;
   this.dob = slots.dob;
 };
